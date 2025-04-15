@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/explore.css">
+    <title>Top Colleges</title>
+   
+</head>
+<body>
+
+    <header class="header">
+        <a href="{{ url_for('home') }}" class="logo">ENGINEERIFY</a> <!--logo placed here-->
+       
+          <div> 
+              <nav class="navbar">
+                  <ul>
+                    <li ><a class="navlist" href="{{ url_for('home') }}" id="home">Home</a></li>
+                    <li class="navlist dropdown">
+                      Engineering Exams 
+                      <span class="arrow">&#9662;</span>
+                      <ul class="dropdown-menu">
+                        <li><a href="https://jeemain.nta.nic.in/">JEE</a></li>
+                        <li><a href="https://jeeadv.ac.in/">JEE-Advance</a></li>
+                        <li><a href="https://cetcell.mahacet.org/">MHT-CET</a></li>
+                        <li><a href="https://www.manipal.edu/mu/admission/indian-students/online-entrance-exam-overview.html">MET</a></li>
+                        <li><a href="https://www.bitsadmission.com/">BITSAT</a></li>
+                        <li><a href="https://vit.ac.in/">VITEEE</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="navlist" href="{{ url_for('exploreenginerring') }}">Explore Engineering</a></li>
+                    <li><a class="navlist" href="{{ url_for('explore') }}">Top colleges</a></li>
+                    <li class="navlist dropdown">
+                      Mock Tests 
+                      <span class="arrow">&#9662;</span>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('quizinstructions') }}">MHT-CET-Mock Test</a></li>
+                        <li><a href="{{ url_for('quizinstructionsjee') }}">JEE-Mock Test</a></li>
+                        <li><a href="{{ url_for('quizinstructionsbitsat') }}">BITSAT-Mock Test</a></li>
+                      </ul>
+                    </li>
+                    <li class="navlist dropdown">
+                      Leaderboards 
+                      <span class="arrow">&#9662;</span>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('leaderboard') }}">MHT-CET-Mock Test Leaderboards</a></li>
+                        <li><a href="{{ url_for('leaderboardjee') }}">JEE-Mock Test Leaderboards</a></li>
+                        <li><a href="{{ url_for('leaderboardbitsat') }}">BITSAT-Mock Test Leaderboards</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="navlist" href="{{ url_for('contactus') }}">Contact Us</a></li>
+                    <!-- <button class="login">LOG IN/SIGN IN</button> -->
+                    {% if user %}
+                    <!-- <p class="user-info">User : {{ user[1] }}</p> -->
+                    <!-- <a href="/logout"><button class="login" id="checkLoginButton">LOG OUT</button></a> -->
+                    <li class="navlist dropdown userprofile">
+                      <div class="user-name">{{ user[1] }}</div>
+                      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="user-icon" alt="User Icon">
+                      <div class="arrow">&#9662;</div>
+                
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('myprofile') }}">MY Profile</a></li>
+                        <li><a href="{{ url_for('editprofile') }}">Edit Profile</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                      </ul>
+                    </li>
+                    {% else %}
+                    <a href="/login"><button class="login" id="checkLoginButton">LOG IN/SIGN UP</button></a>
+                    {% endif %}
+
+                    
+                   
+                 </ul>
+               </nav>
+              </div>
+              </header>
+
+    <div class="heading">
+        <h2>TOP COLLEGES THROUGH JEE ADVANCED</h2>
+    </div>
+    <div class="main-card" >
+    <a href="https://www.iitb.ac.in/acad/">
+        <div class="card card1">
+        <div class="card-title">IIT BOMBAY</div>
+     </div>
+   </a>
+    <a href="https://home.iitd.ac.in/">
+    <div class="card card2">
+        <div class="card-title">IIT DELHI</div>
+    </div></a>
+    <a href="https://www.iitp.ac.in/">
+    <div class="card card3">
+        <div class="card-title">IIT PATNA</div>
+    </div></a>
+    <a href="https://www.iitr.ac.in/">
+    <div class="card card4">
+    <div class="card-title">IIT ROORKEE</div>
+    </div></a>
+    <a href="https://iith.ac.in/">
+    <div class="card card5">
+        <div class="card-title">IIT HYDERABAD</div>
+    </div></a>
+    <a href="https://www.iiti.ac.in/">
+    <div class="card card6">
+    <div class="card-title">IIT INDORE</div>
+    </div>
+    </a>
+    <a href="https://www.iitg.ac.in/?form=MG0AV3">
+        <div class="card card7">
+        <div class="card-title">IIT GUWAHATI</div>
+        </div>
+    </a>
+     <a href="https://iitbhu.ac.in/">
+            <div class="card card8">
+            <div class="card-title">IIT VARANASI</div>
+            </div>
+      </a>
+      <a href="https://www.iitism.ac.in/">
+        <div class="card card9">
+        <div class="card-title">IIT DHANBAD</div>
+        </div>
+     </a>
+     
+     
+    <div class="heading">
+        <h2>TOP COLLEGES THROUGH JEE MAINS</h2>
+    </div>
+    
+    <div class="main-card" >
+    <a href="https://www.nitt.edu/">
+        <div class="card card11">
+        <div class="card-title">NIT TRICHY</div>
+     </div>
+   </a>
+    
+   <a href="https://www.nitk.ac.in/">
+    <div class="card card12">
+        <div class="card-title">NIT SURATHKAL</div>
+    </div></a>
+   
+    <a href="https://nitrkl.ac.in/">
+    <div class="card card13">
+        <div class="card-title">NIT ROURKELA</div>
+    </div></a>
+   
+    <a href="https://nitw.ac.in/main/">
+    <div class="card card14">
+    <div class="card-title">NIT WARANGAL</div>
+    </div></a>
+   
+    <a href="https://nitc.ac.in/">
+    <div class="card card15">
+        <div class="card-title">NIT CALICUT</div>
+    </div></a>
+   
+    <a href="https://vnit.ac.in/">
+    <div class="card card16">
+    <div class="card-title">NIT NAGPUR</div>
+    </div>
+    </a>
+   
+    <a href="https://nitdgp.ac.in/">
+        <div class="card card17">
+        <div class="card-title">NIT DURGAPUR</div>
+        </div>
+    </a>
+   
+    <a href="https://www.nits.ac.in/">
+            <div class="card card18">
+            <div class="card-title">NIT SILCHAR</div>
+            </div>
+    </a>
+    
+    <a href="https://mnit.ac.in/">
+        <div class="card card19">
+        <div class="card-title">NIT JAIPUR</div>
+        </div>
+    </a>
+</div>
+    </div>
+    <!--Footer starts-->
+    <footer>
+        <div class="footer">
+            <div class="nfirst-box">
+                <div class="flogo"><h2>[ENGINEERIFY]</h2></div>
+                <div class="ftext">Welcome to ENGINEERIFY , a dedicated platform desinged to empower students on their journey towards a successful engineering career.</div>
+                <div class="fcontact">
+                    <div class="femail">
+                        <p>Email</p>
+                        <p>ENGINEERIFY@website.com</p>
+                    </div>
+                    <div class="ftelephone">
+                        <p>Telephone</p>
+                        <p>+91 xxxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+            <div class="fsocial_media nbox">
+                <h3>Social Media</h3>
+                <ul>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+            <div class="fstudy_resources nbox">
+                <h3>Study Resources</h3>
+                <ul>
+                    <li>Integration formulas</li>
+                    <li>Derivative formulas</li>
+                    <li>Maths Cheat Sheet</li>
+                    <li>Physics Cheat Sheet</li>
+                </ul>
+            </div>
+            <div class="fFree_textbook_solution nbox">
+                <h3>Free textbook Solution</h3>
+                <ul>
+                    <li>R.D sharma</li>
+                    <li>NCERT</li>
+                    <li>Physical Chemistry by P. Bahadur</li>
+                    <li>Mathematics for Class 11 and 12 by R.D. Sharma</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+   <!--Footer ends-->
+</body>
+</html>

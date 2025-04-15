@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>explore enginerring</title>
+    <link rel="stylesheet" href="../static/css/exploreenginerrify.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="{{ url_for('home') }}" class="logo">ENGINEERIFY</a> <!--logo placed here-->
+       
+        <div> 
+            <nav class="navbar">
+                <ul>
+                  <li ><a class="navlist" href="{{ url_for('home') }}" id="home">Home</a></li>
+                  <li class="navlist dropdown">
+                    Engineering Exams 
+                    <span class="arrow">&#9662;</span>
+                    <ul class="dropdown-menu">
+                      <li><a href="https://jeemain.nta.nic.in/">JEE</a></li>
+                      <li><a href="https://jeeadv.ac.in/">JEE-Advance</a></li>
+                      <li><a href="https://cetcell.mahacet.org/">MHT-CET</a></li>
+                      <li><a href="https://www.manipal.edu/mu/admission/indian-students/online-entrance-exam-overview.html">MET</a></li>
+                      <li><a href="https://www.bitsadmission.com/">BITSAT</a></li>
+                      <li><a href="https://vit.ac.in/">VITEEE</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="navlist" href="{{ url_for('exploreenginerring') }}">Explore Engineering</a></li>
+                  <li><a class="navlist" href="{{ url_for('explore') }}">Top colleges</a></li>
+                  <li class="navlist dropdown">
+                    Mock Tests 
+                    <span class="arrow">&#9662;</span>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('quizinstructions') }}">MHT-CET-Mock Test</a></li>
+                      <li><a href="{{ url_for('quizinstructionsjee') }}">JEE-Mock Test</a></li>
+                      <li><a href="{{ url_for('quizinstructionsbitsat') }}">BITSAT-Mock Test</a></li>
+                    </ul>
+                  </li>
+                  <li class="navlist dropdown">
+                    Leaderboards 
+                    <span class="arrow">&#9662;</span>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('leaderboard') }}">MHT-CET-Mock Test Leaderboards</a></li>
+                      <li><a href="{{ url_for('leaderboardjee') }}">JEE-Mock Test Leaderboards</a></li>
+                      <li><a href="{{ url_for('leaderboardbitsat') }}">BITSAT-Mock Test Leaderboards</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="navlist" href="{{ url_for('contactus') }}">Contact Us</a></li>
+                  <!-- <button class="login">LOG IN/SIGN IN</button> -->
+                  {% if user %}
+                  <!-- <p class="user-info">User : {{ user[1] }}</p> -->
+                  <!-- <a href="/logout"><button class="login" id="checkLoginButton">LOG OUT</button></a> -->
+                  <li class="navlist dropdown userprofile">
+                    <div class="user-name">{{ user[1] }}</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="user-icon" alt="User Icon">
+                    <div class="arrow">&#9662;</div>
+              
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('myprofile') }}">MY Profile</a></li>
+                      <li><a href="{{ url_for('editprofile') }}">Edit Profile</a></li>
+                      <li><a href="/logout">Logout</a></li>
+                    </ul>
+                  </li>
+                  {% else %}
+                  <a href="/login"><button class="login" id="checkLoginButton">LOG IN/SIGN UP</button></a>
+                  {% endif %}
+
+                  
+                 
+               </ul>
+             </nav>
+              </div>
+             
+    
+        </header>
+
+
+    <div class="container">
+        <div class="sidebar">
+            
+            <ul>
+                <li><a href="#mech">Mechanical Engineering</a></li>
+                <li><a href="#electro">Electronics and Telecommunication Engineering</a></li>
+                <li><a href="#comp">Computer Engineering</a></li>
+                <li><a href="#it">IT Engineering</a></li>
+                <li><a href="#elec">Electrical Engineering</a></li>
+                <li><a href="#civil">Civil Engineering</a></li>
+                <li><a href="#Placements">Placement and recruiters</a></li>
+            
+            </ul>
+        </div>
+
+
+        <div class="content">
+            <h1 id="mech">Why Choose Mechanical ?</h1>
+            <p>
+                Mechanical Engineering is one of the oldest and evergreen branches of engineering, which has contributed to several innovations. It can be termed the "mother of all engineering.” Mechanical Engineering deals with concepts of thermal and fluid engineering, mechanics & structural analysis, design & development of refrigeration & air-conditioning systems, and manufacturing.
+            </p>
+            <p>Below are the major domain areas in Mechanical Engineering:</p>
+
+            <h3>Design</h3>
+            <p>Mechanical engineers in this role are responsible for designing thermal systems, mechanical systems, or HVAC systems, applying principles of mechanics, thermodynamics, hydraulics, and computer-aided analysis.</p>
+
+            <h3>Manufacturing and Production</h3>
+            <p>In this role, mechanical engineers design, develop, test, and manufacture machinery and ensure its proper performance and efficiency.</p>
+
+            <h3>Robotics & Mechatronics</h3>
+            <p>Robotics and process automation have become crucial in industries, requiring mechanical engineers to design robotic systems and implement process automation.</p>
+
+            <h3>Power and Metal Plants</h3>
+            <p>Mechanical engineers are needed in thermal power plants due to their knowledge of thermodynamics and material science.</p>
+
+            <h3>Quality Improvement and Assurance</h3>
+            <p>Mechanical engineers work on designing quality standards, inspecting materials, and developing quality control systems.</p>
+
+            <h3>Logistics and Supply Chain Management</h3>
+            <p>Mechanical engineers play a role in analyzing and optimizing supply chain operations.</p>
+
+            <h3>Installation & Maintenance</h3>
+            <p>Mechanical engineers install and maintain machine parts in industrial locations.</p>
+
+            
+
+            <h1 id="electro">Why Choose Electronics and telecommunication</h1>
+            <p>Electronics and Telecommunications (EXTC) Engineering involves research, designing, developing, and testing of electronic equipment used in various communication systems. The EXTC Engineering a backbone of modern communication system that rules rocket science to telecommunication everything. Electronics and Communications engineers also conceptualize and oversee the manufacturing of communications and broadcast systems.</p>
+            <p>The branch deals with Basic Electronics, Solid state devices, Microprocessors/Microcontrollers, Analog/Digital communication, Analog Integrated circuits, Antenna and Wave Propagation, Microwave engineering, Satellite communication, Mobile communication and also includes advanced courses like 5G, IoT and Industrial automation. Looking into recent trends subjects and overall learning requisites the multidisciplinary environment, the EXTC curriculum is further strengthened by adding subjects like Data Structures and Algorithms, DBMS, Big Data Analytics.</p>
+            <P>Over the years, communication and electronics have crept in our lives like never before. This change in the technological field has ensured a bright path ahead for EXTC pursuers. With smartphones in hand and widespread opportunities to communicate, electronics and communication engineering is the next best thing to rule the global market.</P>
+
+            <h1 id="comp">Why Choose Computer Engineering?</h1>
+            <p>Computer engineering integrates fields of computer science and electronic engineering to develop hardware and software. It covers areas such as artificial intelligence (AI), robotics, computer networks, and more.</p>
+            <p>Major domains in Computer Engineering include:</p>
+
+            <h3>Quantum Computing</h3>
+            <p>Integrating quantum behavior with classical computing for more efficient problem-solving.</p>
+
+            <h3>Robotics</h3>
+            <p>Design and automation of robotic systems.</p>
+
+            <h3>Artificial Intelligence and Machine Learning</h3>
+            <p>AI involves building machines that can reason, learn, and act intelligently.</p>
+
+            <h3>Cybersecurity</h3>
+            <p>Preventing cyberattacks and protecting systems and data.</p>
+
+            <h3>Cloud Computing</h3>
+            <p>On-demand availability of computing resources over the internet.</p>
+
+            <h3>Data Science</h3>
+            <p>Extracting meaningful insights from data to help in decision-making.</p>
+
+         
+            <h1 id="it">why choose Information Technology engineering?</h1>
+            <p>Information Technology Engineering is a new field that is quickly becoming a major force in the world of engineering. This new field has been created to address the new challenges posed by information technology. More specifically, the rapidly changing and expanding field of computers, networks and Internet technology have created a need for new engineers. The world is becoming computerized and information technologies are becoming increasingly more powerful and complex. Computer hardware, software and networks have become an integral part of our society. The ability to design, implement and support these new technologies is a challenge that has been met with the help of Information Technology Engineering.
+            IT engineers are those who design and implement computer hardware, software and networks. They are involved in the logical design of computers, how data is stored, transmitted and accessed by computers. They create the blueprints for software programs, which tell computers how to store, access and transmit data. IT Engineer are responsible for computer security, software development and network design. They often work with computer programmers, computer engineers and other technology professions.IT engineers may be employed by governmental agencies, large corporations, or by small businesses. Some IT engineers work for consulting firms, where they provide advice and design solutions to companies that need help with their technology.</p>
+            <h3>major domains in IT </h3>
+            <p><h3>software development</h3>Programming, application development, web development, mobile apps, etc.</p>
+            <p><h3>Cybersecurity</h3>Ethical hacking, penetration testing, network security, encryption.</p>
+            <p><h3>Networking</h3>Network administration, cloud networking, SDN (Software Defined Networking).</p>
+        
+            <h1 id="elec">Why Choose Electrical Engineering?</h1>
+            <p>Electrical engineering focuses on the study, design, and application of equipment, devices, and systems that use electricity. It encompasses fields like power engineering, signal processing, and telecommunications.</p>
+
+            <h3>Major domains in Electrical Engineering:</h3>
+            <h4>Power and Energy</h4>
+            <p>Power engineers work on the generation, transmission, and distribution of electricity and       related systems.</p> 
+
+            <h4>Instrumentation</h4>
+            <p>Design of devices to measure physical quantities like pressure, flow, and temperature.</p>
+
+            <h4>Signal Processing</h4>
+            <p>Analysis and manipulation of signals for audio, telecommunications, and more.</p>
+
+            <h1 id="civil">Why Choose Civil Engineering?</h1>
+            <p>Civil engineering focuses on the design, construction, and maintenance of the physical and naturally built environment, including public works like roads, bridges, and buildings.</p>
+
+            <h3>Major domains in Civil Engineering:</h3>
+            <h4>Coastal Engineering</h4>
+            <p>Managing coastal areas and preventing erosion and flooding.</p>
+
+            <h4>Construction Engineering</h4>
+            <p>Planning and execution of construction projects, including transportation of materials.</p>
+
+            <h4>Structural Engineering</h4>
+            <p>Design and analysis of structures like buildings, bridges, and tunnels.</p>
+
+            <h1 id="Placements">recruiters</h1>
+            <H3>TOP RECRUICTING COMPANIES FOR IT SECTOR</H3>
+            <ol>
+                <li><a href="https://www.oracle.com/in/">oracle</li>
+                <li><a href="https://www.infosys.com/">infosys</a></li>
+                <li><a href="https://www.tcs.com/">tata consulation services</a></li>
+                <li><a href="https://www.ibm.com/in-en">IBM</a></li>
+                <li><a href="https://www.capgemini.com/">Capegemini</a></li>
+                <li><a href="https://www.ltimindtree.com/">LTImindtree</a></li>
+                <li><a href="https://www.cognizant.com/us/en">cognizant</a></li>
+                <li><a href="https://www.hpe.com/in/en/home.html">hewlett packard</a></li>
+            </ol>
+            <h3>TOP RECRUICTING COMPANIES FOR MECHANICAL SECTOR </h3>
+            <ol>
+                <li><a href="https://www.mahindra.com/">Mahindra and mahindra</a></li>
+                <li><a href="https://www.larsentoubro.com/">L&T</a></li>
+                <li><a href="https://www.bosch.in/">Bosch</a></li>
+                <li><a href="https://www.bhel.com/">BHEL</a></li>
+                <li><a href="https://www.thermaxglobal.com/">Thermax</a></li>
+                <li><a href="https://www.suzlon.com/">suzlon</a></li>
+                <li><a href="https://www.caterpillar.com/">caterpillar</a></li>
+            
+            </ol>
+        </div>
+    </div>
+
+        <!--Footer starts-->
+        <footer>
+            <div class="footer">
+                <div class="nfirst-box">
+                    <div class="flogo"><h2>[ENGINEERIFY]</h2></div>
+                    <div class="ftext">Welcome to ENGINEERIFY , a dedicated platform desinged to empower students on their journey towards a successful engineering career.</div>
+                    <div class="fcontact">
+                        <div class="femail">
+                            <p>Email</p>
+                            <p>ENGINEERIFY@website.com</p>
+                        </div>
+                        <div class="ftelephone">
+                            <p>Telephone</p>
+                            <p>+91 xxxxxxxxxx</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fsocial_media nbox">
+                    <h3>Social Media</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Facebook</li>
+                    </ul>
+                </div>
+                <div class="fstudy_resources nbox">
+                    <h3>Study Resources</h3>
+                    <ul>
+                        <li>Integration formulas</li>
+                        <li>Derivative formulas</li>
+                        <li>Maths Cheat Sheet</li>
+                        <li>Physics Cheat Sheet</li>
+                    </ul>
+                </div>
+                <div class="fFree_textbook_solution nbox">
+                    <h3>Free textbook Solution</h3>
+                    <ul>
+                        <li>R.D sharma</li>
+                        <li>NCERT</li>
+                        <li>Physical Chemistry by P. Bahadur</li>
+                        <li>Mathematics for Class 11 and 12 by R.D. Sharma</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+       <!--Footer ends-->
+</body>
+</html>

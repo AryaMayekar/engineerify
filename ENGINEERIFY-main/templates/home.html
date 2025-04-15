@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGINEERIFY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/home.css">
+   
+</head>
+<body>
+  <header class="header">
+    <a href="{{ url_for('home') }}" class="logo">ENGINEERIFY</a> <!--logo placed here-->
+       
+          <div> 
+              <nav class="navbar">
+                  <ul>
+                    <li ><a class="navlist" href="{{ url_for('home') }}" id="home">Home</a></li>
+                    <li class="navlist dropdown">
+                      Engineering Exams 
+                      <span class="arrow">&#9662;</span>
+                      <ul class="dropdown-menu">
+                        <li><a href="https://jeemain.nta.nic.in/">JEE</a></li>
+                        <li><a href="https://jeeadv.ac.in/">JEE-Advance</a></li>
+                        <li><a href="https://cetcell.mahacet.org/">MHT-CET</a></li>
+                        <li><a href="https://www.manipal.edu/mu/admission/indian-students/online-entrance-exam-overview.html">MET</a></li>
+                        <li><a href="https://www.bitsadmission.com/">BITSAT</a></li>
+                        <li><a href="https://vit.ac.in/">VITEEE</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="navlist" href="{{ url_for('exploreenginerring') }}">Explore Engineering</a></li>
+                    <li><a class="navlist" href="{{ url_for('explore') }}">Top colleges</a></li>
+                    <li class="navlist dropdown">
+                      Mock Tests 
+                      <span class="arrow">&#9662;</span>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('quizinstructions') }}">MHT-CET-Mock Test</a></li>
+                        <li><a href="{{ url_for('quizinstructionsjee') }}">JEE-Mock Test</a></li>
+                        <li><a href="{{ url_for('quizinstructionsbitsat') }}">BITSAT-Mock Test</a></li>
+                      </ul>
+                    </li>
+                    <li class="navlist dropdown">
+                      Leaderboards 
+                      <span class="arrow">&#9662;</span>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('leaderboard') }}">MHT-CET-Mock Test Leaderboards</a></li>
+                        <li><a href="{{ url_for('leaderboardjee') }}">JEE-Mock Test Leaderboards</a></li>
+                        <li><a href="{{ url_for('leaderboardbitsat') }}">BITSAT-Mock Test Leaderboards</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="navlist" href="{{ url_for('contactus') }}">Contact Us</a></li>
+                    <!-- <button class="login">LOG IN/SIGN IN</button> -->
+                    {% if user %}
+                    <!-- <p class="user-info">User : {{ user[1] }}</p> -->
+                    <!-- <a href="/logout"><button class="login" id="checkLoginButton">LOG OUT</button></a> -->
+                    <li class="navlist dropdown userprofile">
+                      <div class="user-name">{{ user[1] }}</div>
+                      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="user-icon" alt="User Icon">
+                      <div class="arrow">&#9662;</div>
+                
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('myprofile') }}">MY Profile</a></li>
+                        <li><a href="{{ url_for('editprofile') }}">Edit Profile</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                      </ul>
+                    </li>
+                    {% else %}
+                    <a href="/login"><button class="login" id="checkLoginButton">LOG IN/SIGN UP</button></a>
+                    {% endif %}
+
+                    
+                   
+                 </ul>
+               </nav>
+          </div>
+         
+
+    </header>
+    <!--Ad box-->
+    <div class="Main-ad-box">
+        <!--left box-->
+        <div class="info-part">
+            <div class="written-part">
+                <div class="motivation-box">
+                    <div class="motivation-lines">Never Stop</div>
+                    <div class="learning">Learning</div>
+                </div>
+                <div class="motivation-lines">Life Never Stops Teaching</div>
+                <br>
+                <div class="more-lines">Every teaching and learning journey is unique <br>Following.We'll help guide your way.</div>
+                <br>
+                <button class="start-free-trial-button">Start Free Trial <img src="{{ url_for('static', filename='images/right-arrow.png') }}" alt=""></button> 
+            </div>
+        </div>
+
+        <!--right box-->
+        <div class="image-part">
+            <img src="{{ url_for('static', filename='images/designerad.png') }}">
+        </div>
+    </div>
+    <!--Ad box ends-->
+
+    <!--what are you preparing for section-->
+    <div class="preparing-section">
+        <div class="text">WHAT ARE YOU PREPARING FOR?</div>
+        <div class="box-section1">
+             <div class="box">
+                <a href="https://jeemain.nta.nic.in/">
+                    <div class="one"><h2>1</h2></div>
+                    <div class="jee"><H1>JEE</H1></div>
+                    <div class="jee-content"><p>Conducted by NTA, this is the gateway to NITs, IIITs, and other centrally funded technical institutions.</p></div>
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://jeeadv.ac.in/">
+                    <div class="one"><h2>2</h2></div>
+                    <div class="jee"><H1>JEE-ADVANCE</H1></div>
+                    <div class="jee-content"><p>For admission into the IITs, you must first qualify JEE Main and then clear JEE Advanced. </p></div>
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://cetcell.mahacet.org/">
+                    <div class="one"><h2>3</h2></div>
+                    <div class="jee"><H1>MHT-CET</H1></div>
+                    <div class="jee-content"><p>For admission to engineering colleges in Maharashtra.</p></div>
+                </a>
+            </div>
+        </div>
+        <div class="box-section2">
+            <div class="box">
+                <a href="https://www.manipal.edu/mu/admission/indian-students/online-entrance-exam-overview.html">
+                    <div class="one"><h2>4</h2></div>
+                    <div class="jee"><H1>MET</H1></div>
+                    <div class="jee-content"><p>Conducted by Manipal Academy of Higher Education (MAHE) for admission to its engineering courses.</p></div>
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://www.bitsadmission.com/">
+                    <div class="one"><h2>5</h2></div>
+                    <div class="jee"><H1>BITSAT</H1></div>
+                    <div class="jee-content"><p>Conducted by BITS Pilani for admission to its campuses in Pilani, Goa, and Hyderabad. </p></div>
+                </a>
+            </div>
+            <div class="box">
+                <a href="https://vit.ac.in/">
+                    <div class="one"><h2>6</h2></div>
+                    <div class="jee"><H1>VITEEE</H1></div>
+                    <div class="jee-content"><p>Entrance exam for admission to VIT University campuses in Vellore, Chennai, Bhopal, and Amaravati</p></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!--tp section starts-->
+  <div class="tp-main-container">  
+    <div class="tpcontainer">
+      <div class="tptext">
+          <h1>Precision Career Guidance for <br> Your Engineering Success!</h1>
+          <p class="diffcolor">With Engineerify, you receive precise career guidance tailored to your unique aspirations, ensuring you navigate your path to engineering success with confidence</p>
+      </div>
+      <div class="tpimage">
+        <img src="{{ url_for('static', filename='images/unsplash_vbxyFxlgpjM.png') }}" alt="Photograph">
+    </div>
+   </div>
+ </div>
+<!--tp section ends-->
+
+
+<!--what are you preparation for sections ends-->
+
+<!--carousel section-->
+<div class="carousel_main_container">
+  <div class="left_container">
+      <!-- <div class="tpcontainer"> -->
+       <div class="catchy_heading">The ENGINERIFY Experience:<br> Through Their Eyes</div>
+       <div class="catchy_text">Your journey matters.<br> See how ENGINERIFY has transformed lives.</div>
+      <!-- </div> -->
+  </div>
+
+  <div class="right_container">
+      <div class="carousel">  
+          <div class="slide">
+            
+             <div class="comment">"ENGINERIFY made everything so clear! I finally feel confident about my engineering path.<br> Thank you for simplifying my journey!"</div>
+             
+             <div class="person-info">
+               <img class="icon" src="{{ url_for('static', filename='images/profile.svg') }}">
+               <div class="person-name">Maurya Anshkumar </div>
+             </div>
+          
+          </div>
+
+          <div class="slide">
+            
+              <div class="comment">"The mock tests are perfectly tailored to simulate real exam environments, making it easier to<br> tackle time pressure and improve performance."</div>
+              
+              <div class="person-info">
+                <img class="icon" src="{{ url_for('static', filename='images/profile.svg') }}">
+                <div class="person-name">Kumar Rohit </div>
+              </div>
+           
+          </div>
+          
+          <div class="slide">
+            
+              <div class="comment">"The video lectures simplify complex engineering concepts, ensuring every student,<br> regardless of background, can grasp topics with ease and confidence"</div>
+              
+              <div class="person-info">
+                <img class="icon" src="{{ url_for('static', filename='images/profile.svg') }}">
+                <div class="person-name">Makadia Rishi </div>
+              </div>
+           
+          </div>
+
+          <div class="slide">
+            
+              <div class="comment">"ENGINERIFY’s guidance helped me make informed decisions about engineering branches<br> by providing real-world insights and detailed career path explanations."</div>
+              
+              <div class="person-info">
+                <img class="icon" src="{{ url_for('static', filename='images/profile.svg') }}">
+                <div class="person-name"> Mayekar Arya </div>
+              </div>
+           
+          </div>
+          
+      </div>
+      
+      <div class="dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+      </div>
+      
+
+  </div>
+</div>
+<script src="{{ url_for('static', filename='/js/carousel.js') }}"></script>
+<!--carousel section ends-->
+
+<!--FAQ starts-->
+<div class="Main-FAQ-box">
+    <div class="FAQ-box">
+        <!--left box-->
+        <div class="FAQHEADINGBOX">
+          <div class="FAQheading">Frequently Asked Questions</div>
+          <div class="FAQmorequestions">For more questions please<br>contact our official gmail ENGINEERIFY@gmail.com</div>
+        </div>
+            
+        <!--right box-->
+        <div class="FAQQUESTIONSBOX">
+          <div class="faq-questions-list">
+            <div class="list-elements">
+              <div class="question-element-box">
+                <h3 class="question"><span class="number">01</span>What subject do your lesson videos cover?</h3>
+                <h3 class="icon">+</h3>
+              </div>
+              <p class="Answer">We cover a wide range of engineering subjects including math, physics, and core engineering disciplines.</p>
+              <span class="line"></span>
+            </div>
+          </div>
+        
+          <div class="faq-questions-list">
+            <div class="list-elements">
+              <div class="question-element-box">
+                <h3 class="question"><span class="number">02</span>How can I access the lesson videos? </h3>
+                <h3 class="icon">+</h3>
+              </div>
+              <p class="Answer">To access lesson videos, navigate to the 'Courses' section of our website. You can either watch them directly on the site</p>
+              <span class="line"></span>
+            </div>
+          </div>
+    
+          <div class="faq-questions-list">
+            <div class="list-elements">
+              <div class="question-element-box">
+                <h3 class="question"><span class="number">03</span>Can I download the lesson videos for offline use? </h3>
+                <h3 class="icon">+</h3>
+              </div>
+              <p class="Answer">Currently, the download option for lesson videos is not available. However, you can watch all the videos directly on our website.</p>
+              <span class="line"></span>
+            </div>
+          </div>
+    
+          <div class="faq-questions-list">
+            <div class="list-elements">
+              <div class="question-element-box">
+                <h3 class="question"><span class="number">04</span>Can I ask questions about the lesson videos?</h3>
+                <h3 class="icon">+</h3>
+              </div>
+              <p class="Answer">Yes, you can ask questions directly in the query section below each lesson video. Our team will respond to your questions as soon as possible.</p>
+              <span class="line"></span>
+            </div>
+          </div>
+          
+          <div class="faq-questions-list">
+            <div class="list-elements">
+              <div class="question-element-box">
+                <h3 class="question"><span class="number">05</span>How do I contact customer support? </h3>
+                <h3 class="icon">+</h3>
+              </div>
+              <p class="Answer">You can contact customer support through the 'Contact Us' section on our website. Simply fill out the form with your query, and our team will get back to you shortly.</p>
+            </div>
+          </div>
+    
+        </div>
+    
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='/js/faq.js') }}"></script>
+
+    <!--Footer starts-->
+    <footer>
+      <div class="footer">
+          <div class="nfirst-box">
+              <div class="flogo"><h2>[ENGINEERIFY]</h2></div>
+              <div class="ftext">Welcome to ENGINEERIFY , a dedicated platform desinged to empower students on their journey towards a successful engineering career.</div>
+              <div class="fcontact">
+                  <div class="femail">
+                      <p>Email</p>
+                      <p>ENGINEERIFY@website.com</p>
+                  </div>
+                  <div class="ftelephone">
+                      <p>Telephone</p>
+                      <p>+91 xxxxxxxxxx</p>
+                  </div>
+              </div>
+          </div>
+          <div class="fsocial_media nbox">
+              <h3>Social Media</h3>
+              <ul>
+                  <li>Instagram</li>
+                  <li>Twitter</li>
+                  <li>LinkedIn</li>
+                  <li>Facebook</li>
+              </ul>
+          </div>
+          <div class="fstudy_resources nbox">
+              <h3>Study Resources</h3>
+              <ul>
+                  <li>Integration formulas</li>
+                  <li>Derivative formulas</li>
+                  <li>Maths Cheat Sheet</li>
+                  <li>Physics Cheat Sheet</li>
+              </ul>
+          </div>
+          <div class="fFree_textbook_solution nbox">
+              <h3>Free textbook Solution</h3>
+              <ul>
+                  <li>R.D sharma</li>
+                  <li>NCERT</li>
+                  <li>Physical Chemistry by P. Bahadur</li>
+                  <li>Mathematics for Class 11 and 12 by R.D. Sharma</li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+ <!--Footer ends-->
+
+</body>
+</html>

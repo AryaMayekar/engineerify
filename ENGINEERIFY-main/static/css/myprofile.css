@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    font-family: "Poppins","Inter";
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+}
+
+body{
+    background-color: #FDFDFD;
+}
+
+/*navbar starts*/
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:auto;
+    padding: 10px 20px;
+    background-color: #1c1e53 ;  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;  
+    z-index: 99;
+}
+
+.navbar .navlist {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    margin-left: px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar .navlist::before {
+    content: '' ;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+    
+}
+
+.navbar .navlist:hover::before {
+    width: 100%;
+    box-shadow: 40px 0 100px white, -40px 0 100px white;
+}
+
+.login{
+    padding: 1em 2em;
+    border: solid 1px white;
+    border-radius: 10px;
+    /*border :none;*/
+    background-color: #1c1e53;
+    color: white;
+    font-family: "poppins" sans-serif;
+    cursor: pointer;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center ;
+    text-decoration: none;
+}
+.login::after {
+    content: '';
+    position: absolute;
+    height: 107%;
+    width: 103%;
+    border-radius: 10px;
+    background-color: white;
+    z-index: -1;
+}
+.login:hover {
+    z-index: 0;
+    color: #1c1e53;
+}
+
+.navbar li {
+    list-style: none;
+}
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Hide dropdown by default */
+.dropdown-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    max-width: 500px;
+    
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+/* Show only when hovered on the navlist dropdown */
+.navlist.dropdown:hover .dropdown-menu {
+    display: block !important; /* Fix: Use block instead of flex */
+    flex-direction: column;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+    color: white;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li:hover {
+    background-color: #555;
+}
+
+/* Arrow styles */
+.arrow {
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow on hover */
+.navlist.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.userprofile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+h1{
+    font-size: 45px;
+}
+
+.profile-container {
+    width: 60%;
+    margin: 80px auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profileholder {
+    display: flex;
+    align-items: stretch; /* Children stretch to equal height */
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    /* Define a fixed height if necessary, e.g., height: 400px; or let it be auto */
+    height: auto;
+}
+
+/* Let flexbox control sizing */
+.profile-card, 
+.imageholder {
+    flex: 1;
+}
+
+/* Adjusted profile card style */
+.profile-card {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 12px 0 0 12px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+hr{
+    margin: 20px 0px 20px 0px;
+}
+
+/* Adjusted image holder */
+.imageholder {
+    background-color: #f0f4f8;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjusted image style */
+.user-icon-in-profile-card {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.alert{
+    color: rgb(0, 212, 0);
+    margin: 5px;
+    font-size: 22px;
+    font-weight: 400px;
+}
+
+
+
+/*footer starts*/
+.footer{
+    height: 400px;
+    width: 100%;
+    background-color: #1C1E53;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+.nfirst-box{
+    width: 25rem;
+    font-weight: 600;
+    position: relative;
+    right: 70px;
+}
+.flogo{
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+.fcontact{
+    display: flex;
+    height: 100px;
+    width: 420px;
+    background-color: #FCD980;
+    position: relative;
+    top:87px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.nbox{
+    position: relative;
+    bottom: 60px;
+}
+.nbox h3{
+    padding-bottom: 20px;
+}
+
+.nbox ul{
+    list-style-type: none;
+    padding: 0%;
+    margin: 0%;
+}
+
+.nbox li{
+    padding-bottom: 5px;
+    list-style: none;
+}
+.ftelephone{
+    padding-left: 10px;
+}
